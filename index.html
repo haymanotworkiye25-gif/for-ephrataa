@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe6ef, #ffd1dc);
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* BACKGROUND FLOATING ELEMENTS */
+    .bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .float {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.25;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      20% { opacity: 0.35; }
+      to {
+        transform: translateY(-120px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* CARD */
+    .card {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      z-index: 10; /* ABOVE BACKGROUND */
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 28px;
+      line-height: 1.4;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 120px;
+      width: 100%;
+    }
+
+    button {
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+      position: absolute;
+      left: 50%;
+      top: 30px;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
+
+    .no {
+      background: #f3f3f3;
+      color: #666;
+      position: absolute;
+      left: 20px;
+      top: 30px;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACKGROUND FLOATING LOVE -->
+  <div class="bg">
+    <span class="float" style="left:5%; animation-duration:18s;">❤️</span>
+    <span class="float" style="left:15%; animation-duration:22s;">🌸</span>
+    <span class="float" style="left:25%; animation-duration:20s;">I love you</span>
+    <span class="float" style="left:35%; animation-duration:25s;">💖</span>
+    <span class="float" style="left:45%; animation-duration:19s;">🌷</span>
+    <span class="float" style="left:55%; animation-duration:23s;">I love you</span>
+    <span class="float" style="left:65%; animation-duration:21s;">❤️</span>
+    <span class="float" style="left:75%; animation-duration:26s;">🌸</span>
+    <span class="float" style="left:85%; animation-duration:24s;">I love you</span>
+  </div>
+
+  <div class="card">
+    <h1>
+      Hey love, I’ve been waiting for this day for a long time.  
+      Would you go on a proper date with me?
+    </h1>
+
+    <div class="buttons" id="buttonArea">
+      <button class="yes" onclick="window.location.href='days.html'">
+        YES 💖
+      </button>
+
+      <button class="no" id="noBtn">
+        NO 🙈
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const area = document.getElementById("buttonArea");
+    const yesBtn = document.querySelector(".yes");
+
+    noBtn.addEventListener("mouseenter", moveNo);
+    noBtn.addEventListener("click", moveNo);
+
+    function moveNo() {
+      const areaRect = area.getBoundingClientRect();
+      const noRect = noBtn.getBoundingClientRect();
+      const yesRect = yesBtn.getBoundingClientRect();
+
+      let x, y, safe = false;
+
+      while (!safe) {
+        x = Math.random() * (areaRect.width - noRect.width);
+        y = Math.random() * (areaRect.height - noRect.height);
+
+        const noBox = {
+          left: x,
+          right: x + noRect.width,
+          top: y,
+          bottom: y + noRect.height
+        };
+
+        const yesBox = {
+          left: yesRect.left - areaRect.left,
+          right: yesRect.right - areaRect.left,
+          top: yesRect.top - areaRect.top,
+          bottom: yesRect.bottom - areaRect.top
+        };
+
+        safe = !(
+          noBox.right > yesBox.left &&
+          noBox.left < yesBox.right &&
+          noBox.bottom > yesBox.top &&
+          noBox.top < yesBox.bottom
+        );
+      }
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
+
