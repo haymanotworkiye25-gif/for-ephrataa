@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tuesday Plans 💗</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffe6ef, #ffd1dc);
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .places {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .place {
+      background: #ff4d6d;
+      color: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 140px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .place:hover {
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Tuesday 💕</h1>
+    <p>Another beautiful option… where should we go?</p>
+
+    <div class="places">
+      <div class="place" onclick="go('bole')">Bole</div>
+      <div class="place" onclick="go('lebu')">Lebu</div>
+    </div>
+  </div>
+
+  <script>
+    function go(place) {
+      window.location.href = "tuesday-" + place + ".html";
+    }
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thursday Plans 💕</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffe6ef, #ffd1dc);
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: white;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 30px;
+      padding: 50px 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .choices {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .choice {
+      background: #fff5f7;
+      border-radius: 25px;
+      padding: 30px;
+      width: 260px;
+      box-shadow: 0 10px 20px rgba(255,77,109,0.2);
+      transition: transform 0.25s ease;
+    }
+
+    .choice:hover {
+      transform: scale(1.05);
+    }
+
+    .choice h2 {
+      color: #ff4d6d;
+      margin-bottom: 15px;
+    }
+
+    .choice p {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Thursday 💖</h1>
+    <div class="subtitle">
+      Let’s choose where our time together will take us.
+    </div>
+
+    <div class="choices">
+
+      <!-- BOLE -->
+      <div class="choice">
+        <h2>Bole 🌆</h2>
+        <p>
+          A lively place, good food, sweet treats, and long conversations.
+        </p>
+        <button onclick="window.location.href='thursday-bole.html'">
+          Choose Bole
+        </button>
+      </div>
+
+      <!-- LEBU -->
+      <div class="choice">
+        <h2>Lebu 🌿</h2>
+        <p>
+          Close, calm, and cozy — just us and some quality time.
+        </p>
+        <button onclick="window.location.href='thursday-lebu.html'">
+          Choose Lebu
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+

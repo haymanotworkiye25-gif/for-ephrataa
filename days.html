@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pick a Day 💕</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff);
+      text-align: center;
+      color: #5a2a4f;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+    }
+
+    .days-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .day-box {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      width: 260px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .day-box h2 {
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background: #ff6fa5;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .hint {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #a86b8d;
+      font-style: italic;
+    }
+  </style>
+
+  <script>
+    function checkMonday() {
+      const pass = document.getElementById("mondayPass").value.toLowerCase();
+      if (pass === "dahlia") {
+        window.location.href = "monday.html";
+      } else {
+        alert("That doesn’t feel quite right 💭");
+      }
+    }
+
+    function checkTuesday() {
+      const pass = document.getElementById("tuesdayPass").value.toLowerCase();
+      if (pass === "sonder") {
+        window.location.href = "tuesday.html";
+      } else {
+        alert("Almost… try again 💕");
+      }
+    }
+
+    function checkThursday() {
+      const pass = document.getElementById("thursdayPass").value.toLowerCase();
+      if (pass === "love yours") {
+        window.location.href = "thursday.html";
+      } else {
+        alert("That one comes from the heart ❤️");
+      }
+    }
+  </script>
+</head>
+<body>
+
+<h1>Good choice 💖  
+Now pick a day you’re free</h1>
+
+<div class="days-container">
+
+  <!-- MONDAY -->
+  <div class="day-box">
+    <h2>Monday 🌷</h2>
+    <input type="password" id="mondayPass" placeholder="Enter passcode">
+    <small class="hint">
+      Hint: Your favorite flower and your second name.
+    </small>
+    <button onclick="checkMonday()">Unlock</button>
+  </div>
+
+  <!-- TUESDAY -->
+  <div class="day-box">
+    <h2>Tuesday 🍓</h2>
+    <input type="password" id="tuesdayPass" placeholder="Enter passcode">
+    <small class="hint">
+      Hint: Our favorite artist’s known name.
+    </small>
+    <button onclick="checkTuesday()">Unlock</button>
+  </div>
+
+  <!-- THURSDAY -->
+  <div class="day-box">
+    <h2>Thursday 🌙</h2>
+    <input type="password" id="thursdayPass" placeholder="Enter passcode">
+    <small class="hint">
+      Hint: Your first tattoo you said you wanted to get from Cole.
+    </small>
+    <button onclick="checkThursday()">Unlock</button>
+  </div>
+
+</div>
+
+</body>
+</html>
+
